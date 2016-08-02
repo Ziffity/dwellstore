@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item item-descriptor-name="product" xml-combine="append">
+<properties>
+ <property name="displayName" wildcard-searchable="true"  is-dimension="true" text-searchable="true"/>
+</properties>
+</item>
