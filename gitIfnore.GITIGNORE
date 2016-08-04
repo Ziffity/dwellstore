@@ -6,3 +6,6 @@ config/atg/commerce/search/ProductCatalogOutputConfig.properties
 config/atg/endeca/assembler/cartridge/manager/DefaultFileStoreFactory.properties
 config/atg/multisite/DefaultSiteRuleFilter.properties
 config/atg/registry/RepositoryTargeters/FeaturedProducts.properties
+lib/
+.classpath
+Versioned/.classpath
