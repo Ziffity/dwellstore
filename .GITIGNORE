@@ -1,0 +1,8 @@
+build.xml
+j2ee-apps/Dwell_J2EE/Dwell_web.war/WEB-INF/web.xml
+config/atg/commerce/pricing/priceLists/PriceListManager.properties
+config/atg/commerce/endeca/index/CategoryTreeService.properties
+config/atg/commerce/search/ProductCatalogOutputConfig.properties
+config/atg/endeca/assembler/cartridge/manager/DefaultFileStoreFactory.properties
+config/atg/multisite/DefaultSiteRuleFilter.properties
+config/atg/registry/RepositoryTargeters/FeaturedProducts.properties
