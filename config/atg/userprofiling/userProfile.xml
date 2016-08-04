@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gsa-template>
+
+ <item-descriptor expert="false" folder="false" content="false" default="false" id-separator=":" display-name-resource="itemDescriptorCreditCard" hidden="false" writable="true" name="credit-card" use-id-for-path="false" cache-mode="simple" xml-combine="append">
+    <attribute name="resourceBundle" value="atg.commerce.UserProfileTemplateResources" />
+ 
+  <table name="dwell_credit_card" id-column-name="id" type="auxiliary" shared-table-sequence="1">
+  
+  <property name="creditCardNumber" column-name="credit_card_number" data-type="string" category-resource="categoryBasics" display-name-resource="creditCardNumber">
+        <attribute name="resourceBundle" value="atg.commerce.UserProfileTemplateResources"/>
+        <attribute name="propertySortPriority" value="20"/>
+        <attribute name="secureLogging" value="true"/>
+      </property>
+      
+ </table>
+ </item-descriptor>
+ 
+ </gsa-template>

@@ -1,0 +1,25 @@
+<dsp:page>
+<dsp:importbean bean="/atg/commerce/order/purchase/CartModifierFormHandler" />
+<dsp:importbean bean="/dwell/shipping/ShippingInformationDataHolder" />
+<dsp:importbean bean="/atg/commerce/order/purchase/ShippingGroupFormHandler"/>
+<dsp:getvalueof bean="CartModifierFormHandler.zipcode" var="zip" />
+<c:if test="${not empty zip}">
+<div class="heading-4" style="margin-top:20px;">
+	<label for="available_shipping">Available Shipping Methods</label>
+</div>
+<dsp:getvalueof var="shippingMethods" bean="ShippingInformationDataHolder.estimatedShippingMethods" />
+<div class="controls est_input" style="margin-top:10px;">
+<c:forEach items="${shippingMethods}" var="shippingMethod">
+	
+	<dsp:input type="radio" bean="CartModifierFormHandler.selectedMethod" value="${shippingMethod.key}" />
+	${shippingMethod.key}
+	${shippingMethod.value}
+	<br>
+	
+</c:forEach>
+<dsp:input bean="CartModifierFormHandler.SuccessURL" type="hidden" value="/checkout/cart.jsp" />
+	<dsp:input bean="CartModifierFormHandler.ErrorURL" type="hidden" value="/checkout/cart.jsp" /> </br>
+    <dsp:input style="margin-top:10px;" class="input-available_shipping" type="submit" bean="CartModifierFormHandler.updateShippingMethod" value="update shipping method" /> 
+</div>   
+</c:if>
+</dsp:page>
