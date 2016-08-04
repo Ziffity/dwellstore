@@ -45,7 +45,7 @@
 
 <dsp:oparam name="empty">
   <dsp:getvalueof var="saleprice" param="sku.salePrice" vartype="java.lang.Double"/>
- ss ${saleprice}
+  ${saleprice}
   <dsp:valueof value="${saleprice}" />
   <dsp:getvalueof var="listprice" param="sku.listPrice" vartype="java.lang.Double"/>
   <dsp:valueof value="${listprice}" />

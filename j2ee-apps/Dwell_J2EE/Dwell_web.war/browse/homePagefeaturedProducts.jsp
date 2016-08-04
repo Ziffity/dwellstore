@@ -9,7 +9,6 @@
 <div class="std">
 <div class="category-products">
      <ul class="products-grid first odd">
-           
        
 <dsp:droplet name="TargetingFirst">
 <dsp:param name="targeter" bean="/atg/registry/RepositoryTargeters/FeaturedProducts"/>

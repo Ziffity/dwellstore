@@ -6,7 +6,7 @@ Please change the sourceDir and the targetDir according to your paths
 -->
 
     <property name="sourceDir" value="D:\Commerce\ATG11.2\Dwell_Store"/>
-    <property name="targetDir" value="D:\Commerce\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\servers\dwell_production\stage\dwell_production.ear\dwell_production.ear"/> 
+    <property name="targetDir" value="D:/Commerce/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/servers/dwell_prod/stage/dwell_prod.ear/dwell_prod.ear"/> 
 <target name='copyFiles'>
         <echo message="Start Copying ----" />
         <copy todir="${targetDir}/Dwell_web.war">

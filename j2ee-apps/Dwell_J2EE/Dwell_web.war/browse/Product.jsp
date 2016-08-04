@@ -194,7 +194,7 @@ document.getElementById('image').innerHTML=val;
  											<br><b>Quantity: </b><dsp:input bean="CartModifierFormHandler.quantity" name="quantity" size="3" value="1" type="text"/>
   											<br><br><dsp:input bean="CartModifierFormHandler.addItemToOrder" class="input-submit" value="Add to Cart" type="submit"/>
 											<dsp:input bean="CartModifierFormHandler.addItemToOrderSuccessURL" value="/checkout/cart.jsp" type="hidden"/>
-										
+										   
 										
 										 <%-- *** Add to Wish List *** --%>
    

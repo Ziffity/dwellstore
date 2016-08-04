@@ -194,18 +194,11 @@ GoTo this URL if user pushes RECALCULATE button and there are errors:
 <td class="a-left" colspan="1" style=""> Shipping </td>
 <td class="a-right" style="">
 
-<c:choose>
-<c:when test="${not empty price}">
-<span class="price">${price}</span>
-
-</c:when>
-<c:otherwise>
 <span class="price">
 <dsp:valueof
          bean="ShoppingCart.current.priceInfo.shipping"
          converter="currency">no price</dsp:valueof></span>
-</c:otherwise>
-</c:choose>
+
 </td>
 </tr>
 <tr class="summary-total show-details">
@@ -259,7 +252,6 @@ GoTo this URL if user pushes RECALCULATE button and there are errors:
 </center>
 
 <br><br><br>
-
 
 <script>
  function submitCoupon() 

@@ -10,9 +10,14 @@
 <dsp:include page="/includes/header.jsp"/>
 <div class="main col1-layout">
 	<div class="col-main">
+	
+	
 <dsp:droplet name="RepriceOrderDroplet">
   <dsp:param value="ORDER_TOTAL" name="pricingOp"/>
 </dsp:droplet>
+
+
+
 <dsp:include page="/checkout/cartItems.jsp" >
 <dsp:param name="commerceItems" bean="ShoppingCart.current.commerceItems"/>
 </dsp:include>	

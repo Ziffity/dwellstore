@@ -32,7 +32,7 @@
 
   <fmt:message var="hintText" key="common.search.input"/>
   <fmt:message var="submitText" key="search_simpleSearch.submit"/>
-  
+
   <div id="atg_store_search">
     
     <%-- The search form --%>

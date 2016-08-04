@@ -28,10 +28,18 @@
    <dsp:param name="priceList" bean="Profile.salePriceList" />
    <dsp:oparam name="output">
     <dsp:getvalueof var="salePrice" param="price.listPrice" vartype="java.lang.Double" />
+     <dsp:getvalueof var="listPrice" param="theListPrice.listPrice" vartype="java.lang.Double" />
+     <c:choose>
+     <c:when test="${salePrice eq listPrice}">
+   <b><dsp:valueof converter="currency" value="${salePrice}"/> 
+     </c:when>
+     <c:otherwise>
    <%-- Sale Price: --%><b><dsp:valueof converter="currency" value="${salePrice}"/> 
-    <dsp:getvalueof var="price" param="theListPrice.listPrice" vartype="java.lang.Double" />
-
-  <del> <%--List Price:--%> <dsp:valueof converter="currency" value="${price}" /></del></b>
+  
+  <del> <%--List Price:--%> <dsp:valueof converter="currency" value="${listPrice}" /></del></b>
+  </c:otherwise>
+</c:choose>
+  
    </dsp:oparam>
    <dsp:oparam name="empty">
     <dsp:getvalueof var="price" param="theListPrice.listPrice" vartype="java.lang.Double" />

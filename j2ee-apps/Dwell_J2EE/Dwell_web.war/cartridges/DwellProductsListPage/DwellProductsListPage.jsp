@@ -7,7 +7,6 @@
 <dsp:include page="/includes/header.jsp"/>
 <div class="main col2-left-layout">
 
-
 <dsp:importbean bean="/atg/commerce/order/purchase/CartModifierFormHandler"/>
   <dsp:importbean bean="/OriginatingRequest" var="originatingRequest"/>
   <dsp:importbean bean="/atg/endeca/store/droplet/ActionURLDroplet"/>
@@ -83,7 +82,7 @@ Sort By:
                             selected="true"
                         </c:if>
                         
- value="${fn:replace(sortAction, "/dwell/storeus","")}">${sort.label}
+ value="${fn:replace(sortAction, "/dwell_store","")}">${sort.label}
     </option>
 </c:forEach>
 </select>

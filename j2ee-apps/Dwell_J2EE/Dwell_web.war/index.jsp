@@ -10,8 +10,6 @@
 <dsp:importbean bean="atg/userprofiling/Profile"/>
 <dsp:importbean bean="/OriginatingRequest" var="originatingRequest"/>
 
-
-
 <dsp:droplet name="InvokeAssembler">
     <dsp:param name="contentCollection" value="/content/Web/Home Pages"/>
     <dsp:oparam name="output">
@@ -27,8 +25,6 @@
     <center><dsp:renderContentItem contentItem="${homePageContent}" /></center>
   
    
-
-
   <%--
   
     The InvokeAssembler droplet is used to retrieve content from Experience 

@@ -43,20 +43,20 @@ public class DwellTaxCalculator extends GenericService implements TaxPricingCalc
 	public void priceTax(TaxPriceInfo pPriceQuote , Order pOrder, RepositoryItem pPricingModel,
 			Locale pLocale, RepositoryItem pProfile, Map pExtraParameters) throws PricingException {
 		// TODO Auto-generated method stub
-		/*System.out.println("INSIDE PRICETAX" );*/
+		System.out.println("INSIDE PRICETAX" );
 		double taxAmount = 0;
 		
 		Object address =  pProfile.getPropertyValue("derivedShippingAddress");
 		RepositoryItem item= (RepositoryItem) address;
 		String postalCode=(String) item.getPropertyValue("postalCode");
-	/*	System.out.println("*****POSTALCODE : " +postalCode);*/
+		System.out.println("*****POSTALCODE : " +postalCode);
 		
 		/*int code = 99925;
 		String zipcode1 =Integer.toString(code);
 		System.out.println("***ZIPCODE : " +zipcode1);*/
 		taxAmount = getTaxManager().calculateTax(pOrder, postalCode);
 		
-		/*System.out.println("***TaxAmount" +taxAmount);*/
+		System.out.println("***TaxAmount" +taxAmount);
 		pPriceQuote.setAmount(taxAmount);
 		}
 }

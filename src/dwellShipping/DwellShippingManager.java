@@ -1,11 +1,10 @@
 package dwellShipping;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import atg.commerce.pricing.ShippingPriceInfo;
+import atg.commerce.order.purchase.ShippingGroupFormHandler;
+
 import atg.nucleus.GenericService;
 import atg.repository.Repository;
 import atg.repository.RepositoryException;
@@ -17,9 +16,38 @@ public class DwellShippingManager extends GenericService{
 
 	Repository mystoreshippingrepository;
 	RepositoryItem item=null;
+	String postalCode;
+	DwellShippingCalculator shippingCalculator;
 	
+
+	public DwellShippingCalculator getShippingCalculator() {
+		return shippingCalculator;
+	}
+
+	public void setShippingCalculator(DwellShippingCalculator shippingCalculator) {
+		this.shippingCalculator = shippingCalculator;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+
 	ShippingInformationDataHolder shippingInformationDataHolder;
+	ShippingGroupFormHandler shippingGroupFormHandler;
 	
+	public ShippingGroupFormHandler getShippingGroupFormHandler() {
+		return shippingGroupFormHandler;
+	}
+
+	public void setShippingGroupFormHandler(
+			ShippingGroupFormHandler shippingGroupFormHandler) {
+		this.shippingGroupFormHandler = shippingGroupFormHandler;
+	}
+
 	public ShippingInformationDataHolder getShippingInformationDataHolder() {
 		return shippingInformationDataHolder;
 	}
@@ -45,10 +73,11 @@ public class DwellShippingManager extends GenericService{
 		String shippingMethod = null;
 		Map<String,Double> shippingMethods = new HashMap<String, Double>();
 		params[0] = zipcode;
+		
 		String query = "zip_code EQUALS ?0";
 		System.out.println("***param[0]:"+params[0]);
 		
-		try {
+			try {
 			RepositoryView view = getMystoreshippingrepository().getView("shippingRepository");
 			RqlStatement statement = RqlStatement.parseRqlStatement(query);
 			items = statement.executeQuery(view,params);
@@ -76,7 +105,7 @@ public class DwellShippingManager extends GenericService{
 		param[0]=zipcode;
 		param[1]=shippingMethod;
 		Double price = null;
-		
+				
 		String query = "zip_code EQUALS ?0 AND shipping_method EQUALS ?1";
 		try{
 			RepositoryView view = mystoreshippingrepository.getView("shippingRepository");
@@ -100,7 +129,11 @@ public class DwellShippingManager extends GenericService{
 		   }
 		
 		getShippingInformationDataHolder().setPrice(price);
-		
+		getShippingCalculator().setAmount(price);
+	}
+	
+	public void postal(){
+		System.out.println(getPostalCode());
 	}
 	
 }

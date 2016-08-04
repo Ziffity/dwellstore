@@ -61,7 +61,7 @@ public class MystoreSeoUrlFormatter extends SeoUrlFormatter
 			Object param[] = new Object[2];
 			param[0] = pathElements[i];
 			param[1] = siteContextManager.getCurrentSiteId();
-			String query = "seoUrl EQUALS ?0";
+			String query = "seoURL EQUALS ?0";
 			//System.out.println("path element: "+ pathElements[i]);
 			try {
 				RepositoryView view = catalogRepository.getView("category");
